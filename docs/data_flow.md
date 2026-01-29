@@ -13,12 +13,12 @@
 
 | Source | Bronze Table |
 |------|--------------|
-| CRM  | crm_sales_details |
+| CRM  | sales_details |
 | CRM  | crm_cust_info |
-| CRM  | crm_prd_info |
-| ERP  | erp_cust_az12 |
-| ERP  | erp_loc_a101 |
-| ERP  | erp_px_cat_g1v2 |
+| CRM  | prd_info |
+| ERP  | cust_az12 |
+| ERP  | loc_A101 |
+| ERP  | px_cat_g1v2 |
 
 ---
 
@@ -26,12 +26,12 @@
 
 | Silver Table | Description |
 |-------------|------------|
-| crm_sales_details | Cleaned and validated sales transactions |
+| sales_details | Cleaned and validated sales transactions |
 | crm_cust_info | Standardized customer information |
-| crm_prd_info | Standardized product information |
-| erp_cust_az12 | Cleaned ERP customer master data |
-| erp_loc_a101 | Standardized location data |
-| erp_px_cat_g1v2 | Cleaned product category and pricing reference |
+| prd_info | Standardized product information |
+| cust_az12 | Cleaned ERP customer master data |
+| loc_A101 | Standardized location data |
+| px_cat_g1v2 | Cleaned product category and pricing reference |
 
 ---
 
@@ -41,14 +41,14 @@
 
 | Gold Table | Source Tables |
 |-----------|--------------|
-| dim_customers | crm_cust_info, erp_cust_az12, erp_loc_a101 |
-| dim_products | crm_prd_info, erp_px_cat_g1v2 |
+| dim_customers | silver.crm_cust_info, silver.cust_az12, silver.loc_A101 |
+| dim_products | silver.prd_info, silver.px_cat_g1v2 |
 
 ### Fact Table
 
 | Gold Table | Source Table |
 |-----------|--------------|
-| fact_sales | crm_sales_details |
+| fact_sales | silver.sales_details |
 
 ---
 
