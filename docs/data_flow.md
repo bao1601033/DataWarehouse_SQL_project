@@ -10,7 +10,9 @@
 ---
 
 ## Bronze Layer (Raw Data)
-
+**Purpose:**  
+The Bronze layer stores raw data ingested from source systems.  
+At this stage, tables are created with source-aligned schemas and data types, and loading scripts are executed without applying business logic or transformations.
 | Source | Bronze Table |
 |------|--------------|
 | CRM  | sales_details |
@@ -23,7 +25,9 @@
 ---
 
 ## Silver Layer (Cleansed & Standardized)
-
+**Purpose:**  
+The Silver layer applies data quality rules and transformations, including cleansing, normalization, standardization, and validation.  
+This layer ensures consistent formats, corrected values, and reliable relationships across datasets.
 | Silver Table | Description |
 |-------------|------------|
 | sales_details | Cleaned and validated sales transactions |
@@ -36,7 +40,9 @@
 ---
 
 ## Gold Layer (Business Model)
-
+**Purpose:**  
+The Gold layer represents curated, business-ready data models optimized for analytics and reporting.  
+It consists of dimension and fact tables with surrogate keys and well-defined relationships.
 ### Dimension Tables
 
 | Gold Table | Source Tables |
